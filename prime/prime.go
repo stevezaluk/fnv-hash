@@ -5,6 +5,15 @@ import (
 	"strconv"
 )
 
+const (
+	primeBit32   uint16 = 32
+	primeBit64   uint16 = 64
+	primeBit128  uint16 = 128
+	primeBit256  uint16 = 256
+	primeBit512  uint16 = 512
+	primeBit1024 uint16 = 1024
+)
+
 /*
 randomRange - Generate a pseudo-random number between the min and max provided
 */
