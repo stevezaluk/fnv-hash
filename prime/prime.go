@@ -22,11 +22,10 @@ func randomRange(max uint64, min uint64) uint64 {
 }
 
 /*
-countBitValues - Count's the number of 1 and 0 bits in an unsigned 64-bit integer.
+countBitValues - Count's the number of 1-bits in an 64-bit unsigned integer
 */
-func countBitValues(number uint64) (uint64, uint64) {
+func countBitValues(number uint64) uint64 {
 	oneBit := 0
-	zeroBit := 0
 
 	binary := strconv.FormatInt(int64(number), 2)
 
@@ -35,10 +34,7 @@ func countBitValues(number uint64) (uint64, uint64) {
 			oneBit++
 		}
 
-		if string(binary[i]) == "0" {
-			zeroBit++
-		}
 	}
 
-	return uint64(oneBit), uint64(zeroBit)
+	return uint64(oneBit)
 }
