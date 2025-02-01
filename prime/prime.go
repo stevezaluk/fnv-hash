@@ -81,5 +81,5 @@ func GetPrime(bitSize uint16) uint64 {
 		return FNVPrime64Bit
 	}
 
-	return FNVPrime32Bit
+	return FNVPrime64Bit
 }
