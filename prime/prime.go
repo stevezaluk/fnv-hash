@@ -7,19 +7,11 @@ import (
 )
 
 const (
-	PrimeBitSize32   uint16 = 32
-	PrimeBitSize64   uint16 = 64
-	PrimeBitSize128  uint16 = 128
-	PrimeBitSize256  uint16 = 256
-	PrimeBitSize512  uint16 = 512
-	PrimeBitSize1024 uint16 = 1024
+	PrimeBitSize32 uint16 = 32
+	PrimeBitSize64 uint16 = 64
 
-	Prime32Bit   uint64 = 16777619
-	Prime64Bit   uint64 = 1099511628211
-	Prime128Bit  uint64 = 309485009821345068724781371
-	Prime256Bit  uint64 = 374144419156711147060143317175368453031918731002211
-	Prime512Bit  uint64 = 35835915874844867368919076489095108449946327955754392558399825615420669938882575126094039892345713852759
-	Prime1024Bit uint64 = 5016456510113118655434598811035278955030765345404790744303017523831112055108147451509157692220295382716162651878526895249385292291816524375083746691371804094271873160484737966720260389217684476157468082573
+	Prime32Bit uint64 = 16777619
+	Prime64Bit uint64 = 1099511628211
 )
 
 /*
@@ -87,22 +79,6 @@ func GetPrime(bitSize uint16) uint64 {
 
 	if bitSize == PrimeBitSize64 {
 		return Prime64Bit
-	}
-
-	if bitSize == PrimeBitSize128 {
-		return Prime128Bit
-	}
-
-	if bitSize == PrimeBitSize256 {
-		return Prime256Bit
-	}
-
-	if bitSize == PrimeBitSize512 {
-		return Prime512Bit
-	}
-
-	if bitSize == PrimeBitSize1024 {
-		return Prime1024Bit
 	}
 
 	return Prime32Bit
