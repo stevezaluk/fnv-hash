@@ -7,11 +7,11 @@ import (
 )
 
 const (
-	PrimeBitSize32 uint16 = 32
-	PrimeBitSize64 uint16 = 64
+	BitSize32 uint16 = 32
+	BitSize64 uint16 = 64
 
-	Prime32Bit uint64 = 16777619
-	Prime64Bit uint64 = 1099511628211
+	FNVPrime32Bit uint64 = 16777619
+	FNVPrime64Bit uint64 = 1099511628211
 )
 
 /*
@@ -73,13 +73,13 @@ based on the bitSize that you pass to it. If the unsigned 16-bit integer that is
 passed does not match one of the constants defined above, then the 32-bit prime is returned
 */
 func GetPrime(bitSize uint16) uint64 {
-	if bitSize == PrimeBitSize32 {
-		return Prime32Bit
+	if bitSize == BitSize32 {
+		return FNVPrime32Bit
 	}
 
-	if bitSize == PrimeBitSize64 {
-		return Prime64Bit
+	if bitSize == BitSize64 {
+		return FNVPrime64Bit
 	}
 
-	return Prime32Bit
+	return FNVPrime32Bit
 }
