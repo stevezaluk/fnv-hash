@@ -74,3 +74,36 @@ func GenerateFNVPrime(bitSize uint16) uint64 {
 
 	return uint64(0)
 }
+
+/*
+GetPrime - Utility function for returning a pre-computer FNV Prime number
+based on the bitSize that you pass to it. If the unsigned 16-bit integer that is
+passed does not match one of the constants defined above, then the 32-bit prime is returned
+*/
+func GetPrime(bitSize uint16) uint64 {
+	if bitSize == PrimeBitSize32 {
+		return Prime32Bit
+	}
+
+	if bitSize == PrimeBitSize64 {
+		return Prime64Bit
+	}
+
+	if bitSize == PrimeBitSize128 {
+		return Prime128Bit
+	}
+
+	if bitSize == PrimeBitSize256 {
+		return Prime256Bit
+	}
+
+	if bitSize == PrimeBitSize512 {
+		return Prime512Bit
+	}
+
+	if bitSize == PrimeBitSize1024 {
+		return Prime1024Bit
+	}
+
+	return Prime32Bit
+}
