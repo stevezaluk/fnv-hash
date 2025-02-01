@@ -5,7 +5,7 @@ import "github.com/stevezaluk/fnv-hash/prime"
 const (
 	OffsetStr        string = "chongo <Landon Curt Noll> /\\../\\"
 	OffsetBasis64Bit uint64 = 14695981039346656037
-	OffsetBasis32Bit uint32 = 2166136261
+	OffsetBasis32Bit uint64 = 2166136261
 )
 
 /*
