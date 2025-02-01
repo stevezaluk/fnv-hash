@@ -32,3 +32,37 @@ func NewFNV0Hash(bitSize uint16, data []byte) uint64 {
 
 	return hash
 }
+
+/*
+NewFNV1Hash - Generate a new FNV1 hash
+*/
+func NewFNV1Hash(bitSize uint16, data []byte) uint64 {
+	var hash uint64 = OffsetBasis64Bit
+	if bitSize == prime.BitSize32 {
+		hash = OffsetBasis32Bit
+	}
+
+	for _, _byte := range data {
+		hash = hash * prime.GetPrime(bitSize)
+		hash = hash ^ uint64(_byte)
+	}
+
+	return hash
+}
+
+/*
+NewFNV1AHash - Generate a new FNV1A hash
+*/
+func NewFNV1AHash(bitSize uint16, data []byte) uint64 {
+	var hash uint64 = OffsetBasis64Bit
+	if bitSize == prime.BitSize32 {
+		hash = OffsetBasis32Bit
+	}
+
+	for _, _byte := range data {
+		hash = hash ^ uint64(_byte)
+		hash = hash * prime.GetPrime(bitSize)
+	}
+
+	return hash
+}
